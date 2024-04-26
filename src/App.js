@@ -16,10 +16,10 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    fetchApiConfig()
-    fetchGenres()
-  }, [])
+  // useEffect(() => {
+  //   fetchApiConfig()
+  //   fetchGenres()
+  // }, [])
 
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
@@ -61,7 +61,6 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Home />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:mediaType/:id" element={<Detail />} />
