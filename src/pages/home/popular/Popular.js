@@ -18,10 +18,12 @@ const Popular = () => {
 
     if (error !== null && loading === false) {
         return (
-            <ContentWrapper>
-                <span className="carouselTitle">What's Popular</span>
-                <h2 className="errorMessage">Something went wrong</h2>
-            </ContentWrapper>
+            <div className="carouselSection">
+                <ContentWrapper>
+                    <span className="carouselTitle">What's Popular</span>
+                    <h2 className="errorMessage">Something went wrong</h2>
+                </ContentWrapper>
+            </div>
         )
     }
 

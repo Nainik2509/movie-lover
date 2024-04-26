@@ -61,6 +61,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
+        <Home />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:mediaType/:id" element={<Detail />} />

@@ -101,13 +101,14 @@ export default function Header() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <img src='/images/logo_no_background.svg'
-                        alt='Movie-Lover'
-                        component="div"
-                        className='logo'
-                        onClick={() => { navigate('/') }}
-                        sx={{ flexGrow: 1 }}
+                    <img
+                        src="/images/logo_no_background.svg"
+                        alt="Movie-Lover"
+                        className="logo"
+                        onClick={() => navigate('/')}
+                        style={{ flexGrow: 1 }}
                     />
+
                     <Box sx={{ flexGrow: 1 }}>
                         <Search >
                             <SearchIconWrapper>
