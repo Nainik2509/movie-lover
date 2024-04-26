@@ -1,0 +1,33 @@
+svg#play {
+    display: block;
+    cursor: pointer;
+    transform-origin: center;
+}
+
+svg#play #triangle {
+    fill: rgba(22, 22, 22, 0);
+    transition: 500ms;
+    transform-origin: center;
+    stroke: aliceblue;
+}
+
+svg#play:hover #triangle {
+    fill: #f00b51;
+    stroke: #f00b51;
+}
+
+svg#play #lineOne,
+svg#play #lineTwo {
+    transition: 1s;
+    transform-origin: center;
+}
+
+svg#play:hover #lineOne {
+    transform: rotate(260deg);
+    stroke: #f00b51;
+}
+
+svg#play:hover #lineTwo {
+    transform: rotate(-450deg);
+    stroke: #f00b51;
+}

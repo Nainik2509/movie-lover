@@ -1,0 +1,241 @@
+.detailsBanner {
+    margin: 50px 0px;
+}
+
+.content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 25px;
+}
+
+@media (min-width: 768px) {
+    .content {
+        gap: 50px;
+        flex-direction: row;
+    }
+}
+
+.content .left {
+    flex-shrink: 0;
+}
+
+.content .left .posterImg {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+    .content .left .posterImg {
+        max-width: 350px;
+    }
+}
+
+.content .right {
+    color: white;
+}
+
+.content .right .title {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.content .right .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    font-style: italic;
+    opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+    .content .right .subtitle {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.content .right .genres {
+    margin-bottom: 20px;
+    flex-flow: row wrap;
+}
+
+.content .right .overview {
+    margin-bottom: 20px;
+}
+
+.content .right .overview .heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content .right .overview .description {
+    line-height: 24px;
+}
+
+@media (min-width: 768px) {
+    .content .right .overview .description {
+        padding-right: 100px;
+    }
+}
+
+.content .right .circleRating {
+    max-width: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+    .content .right .circleRating {
+        max-width: 90px;
+    }
+}
+
+.content .right .circleRating .CircularProgressbar-text {
+    fill: white;
+}
+
+.content .right .playbtn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.content .right .playbtn svg {
+    width: 60px;
+}
+
+.content .right .playbtn:hover {
+    color: #f00b51;
+}
+
+.content .right .playbtn:hover svg#play #lineOne {
+    transform: rotate(260deg);
+    stroke: #f00b51;
+}
+
+.content .right .playbtn:hover svg#play #lineTwo {
+    transform: rotate(-450deg);
+    stroke: #f00b51;
+}
+
+.content .right .playbtn:hover svg#play #triangle {
+    fill: #f00b51;
+    stroke: #f00b51;
+}
+
+@media (min-width: 768px) {
+    .content .right .playbtn svg {
+        width: 80px;
+    }
+}
+
+.content .right .playbtn .text {
+    font-size: 20px;
+}
+
+.content .right .row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.content .right .info {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    display: flex;
+}
+
+.content .right .info .infoItem {
+    margin-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.content .right .info .text {
+    margin-right: 10px;
+    opacity: 0.5;
+    line-height: 24px;
+}
+
+.content .right .info .text.bold {
+    font-weight: 600;
+    opacity: 1;
+}
+
+
+.skeleton {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 80%
+      ),
+      darkgray;
+    background-repeat: repeat-y;
+    background-size: 50px 500px;
+    background-position: 0 0;
+    animation: shine 1.5s infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 100% 0;
+    }
+} 
+
+.detailsBannerSkeleton {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 25px;
+}
+
+@media (min-width: 768px) {
+    .detailsBannerSkeleton {
+        gap: 50px;
+        flex-direction: row;
+    }
+}
+
+.detailsBannerSkeleton .contentWrapper {
+    display: flex;
+    gap: 50px;
+}
+
+.detailsBannerSkeleton .left {
+    flex-shrink: 0;
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    aspect-ratio: 1/1.5;
+}
+
+@media (min-width: 768px) {
+    .detailsBannerSkeleton .left {
+        max-width: 350px;
+    }
+}
+
+.detailsBannerSkeleton .right {
+    width: 100%;
+}
+
+.detailsBannerSkeleton .right .row {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+}
+
+.detailsBannerSkeleton .right .row:nth-child(2) {
+    width: 75%;
+    margin-bottom: 50px;
+}
+
+.detailsBannerSkeleton .right .row:nth-child(5) {
+    width: 50%;
+    margin-bottom: 50px;
+}

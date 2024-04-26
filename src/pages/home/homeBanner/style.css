@@ -1,0 +1,80 @@
+.home-banner {
+  height: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+.custom-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  z-index: 1;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 50%;
+  height: 50px;
+}
+
+.search-container .searchbar:hover {
+  box-shadow: 0 0 1em #f00b51;
+}
+
+.noBorder {
+  outline: none; /* Remove default focus outline */
+  border: none;  /* Remove border */
+}
+
+.search-container .searchbar {
+  background-color: white;
+  border-radius: 15px 0 0 15px;
+  flex: 1;
+  height: 100%;
+  padding: 10px;
+  border: none;
+}
+
+.search-container .MuiButton-contained {
+    background: #f00b51; 
+    padding: 16px 20px;
+    border-radius: 0 15px 15px 0;
+    height: 100%;
+    margin: 0;
+}
+
+.search-container .MuiButton-contained:hover {
+  box-shadow: 0 0 1em #f00b51;
+  background: #f00b51; 
+}
+
+.lazy-load-image-background {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block !important;
+}

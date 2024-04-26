@@ -1,0 +1,31 @@
+/* AppBar */
+.appBar {
+    background-color: #000000;
+}
+
+/* Logo */
+.logo {
+    height: 40px;
+    display: none;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        display: block;
+    }
+}
+
+/* Menu */
+.menuIcon {
+    margin-right: 16px;
+}
+
+/* Pages */
+.pageButton {
+    margin-top: 16px;
+    color: white;
+}
+
+/* Remove unused CSS classes */
+/* .menuBox, .menu, .css-14tur9a-MuiButtonBase-root-MuiButton-root, .pagesBox */
