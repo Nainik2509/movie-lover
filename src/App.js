@@ -59,17 +59,15 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:mediaType/:id" element={<Detail />} />
-          <Route path="/search/:query" element={<SearchResult />} />
-          <Route path="/explore/:mediaType" element={<Explore />} />
-          <Route path="*" element={<Page404 />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:mediaType/:id" element={<Detail />} />
+        <Route path="/search/:query" element={<SearchResult />} />
+        <Route path="/explore/:mediaType" element={<Explore />} />
+        <Route path="*" element={<Page404 />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
