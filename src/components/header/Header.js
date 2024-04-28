@@ -15,9 +15,9 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import './style.css'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Stack from '@mui/material/Stack';
 
-const pages = ['Movies', 'TV Shows'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -48,7 +48,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     [theme.breakpoints.up('md')]: {
-        padding: theme.spacing(0, 1), // Adjust padding on medium (laptop) screens
+        padding: theme.spacing(0, 1),
     },
 }));
 
@@ -67,6 +67,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+    const [searchText, setSearchText] = useState("")
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const navigate = useNavigate()
@@ -74,21 +75,22 @@ export default function Header() {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+    function searchQueryHandler(event) {
+        if (event.key === 'Enter') {
+            if (searchText.trim() !== "") {
+                setSearchText("")
+                navigate(`/search/${searchText.trim()}`)
+            }
+        }
+    }
 
     return (
         <AppBar position="static" sx={{ backgroundColor: '#000000' }}>
-            <Container maxWidth="xl">
+            <Container maxWidth="lg">
                 <Toolbar disableGutters>
                     <IconButton
                         size="large"
@@ -117,35 +119,25 @@ export default function Header() {
                             <StyledInputBase
                                 placeholder="Search..."
                                 inputProps={{ 'aria-label': 'search' }}
+                                onChange={(e) => setSearchText(e.target.value)}
+                                value={searchText}
+                                onKeyUp={(e) => searchQueryHandler(e)}
                             />
                         </Search>
                     </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button key={page} sx={{ color: 'inherit' }}>
-                                {page}
-                            </Button>
-                        ))}
+                    <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
+                        <Button sx={{ color: 'inherit' }}
+                            onClick={() => { navigate(`/explore/movie`) }}
+                            className='menuButton'>
+                            MOVIES
+                        </Button>
+                        <Button sx={{ color: 'inherit' }}
+                            onClick={() => { navigate(`/explore/tv`) }}
+                            className='menuButton'>
+                            TV SHOWS
+                        </Button>
                     </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    {setting}
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
+
                 </Toolbar>
             </Container>
             <Menu
@@ -154,11 +146,20 @@ export default function Header() {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
             >
-                {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                        {page}
-                    </MenuItem>
-                ))}
+                <MenuItem onClick={handleCloseNavMenu}>
+                    <Stack direction="column" spacing={2}>
+                        <Button sx={{ color: 'inherit' }}
+                            onClick={() => { navigate(`/explore/movie`) }}
+                            className='menuButton'>
+                            MOVIES
+                        </Button>
+                        <Button sx={{ color: 'inherit' }}
+                            onClick={() => { navigate(`/explore/tv`) }}
+                            className='menuButton'>
+                            TV SHOWS
+                        </Button>
+                    </Stack>
+                </MenuItem>
             </Menu>
         </AppBar>
     );

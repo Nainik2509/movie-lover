@@ -213,5 +213,13 @@
     .loadingSkeleton .skeletonItem {
         width: calc(50% - 16px);
     }
+
+    .carousel .carouselLeftNav {
+        left: 5px;
+    }
+    
+    .carousel .carouselRightNav {
+        right: 5px;
+    }
 }
 

@@ -1,9 +1,8 @@
-/* AppBar */
+
 .appBar {
     background-color: #000000;
 }
 
-/* Logo */
 .logo {
     height: 40px;
     display: none;
@@ -16,16 +15,16 @@
     }
 }
 
-/* Menu */
 .menuIcon {
     margin-right: 16px;
 }
 
-/* Pages */
 .pageButton {
     margin-top: 16px;
     color: white;
 }
 
-/* Remove unused CSS classes */
-/* .menuBox, .menu, .css-14tur9a-MuiButtonBase-root-MuiButton-root, .pagesBox */
+.menuButton:hover {
+    box-shadow: 0 0 1em #f00b51;
+    color: #f00b51;
+}

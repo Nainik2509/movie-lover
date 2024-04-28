@@ -1,0 +1,20 @@
+.pageNotFound {
+    height: 500px;
+    padding-top: 100px;
+}
+
+.pageNotFound .contentWrapper {
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageNotFound .contentWrapper .bigText {
+    font-size: 150px;
+    font-weight: 700;
+}
+
+.pageNotFound .contentWrapper .smallText {
+    font-size: 44px;
+}

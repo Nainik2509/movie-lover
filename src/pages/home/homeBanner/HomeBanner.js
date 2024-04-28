@@ -16,7 +16,7 @@ export default function HomeBanner() {
   const { data, loading, error } = useFetch("/movie/upcoming")
 
   useEffect(() => {
-    if (error !== null) {
+    if (error === null) {
       const randomNum = Math.floor(Math.random() * 20)
       const backdropImg = data?.results[randomNum]?.backdrop_path
       const background = image_url.backdrop + backdropImg
@@ -30,8 +30,8 @@ export default function HomeBanner() {
     }
   }
   function searchHandler() {
-    if (searchText !== "") {
-      navigate(`/search/${searchText}`)
+    if (searchText.trim() !== "") {
+      navigate(`/search/${searchText.trim()}`)
     }
   }
 
@@ -63,7 +63,7 @@ export default function HomeBanner() {
 
             <Button
               variant="contained"
-              onChange={searchHandler}
+              onClick={searchHandler}
             >
               Search
             </Button>

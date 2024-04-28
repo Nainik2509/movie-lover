@@ -46,8 +46,8 @@
 }
 
 .noBorder {
-  outline: none; /* Remove default focus outline */
-  border: none;  /* Remove border */
+  outline: none; 
+  border: none;  
 }
 
 .search-container .searchbar {
