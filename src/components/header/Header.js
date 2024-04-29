@@ -17,6 +17,7 @@ import './style.css'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Stack from '@mui/material/Stack';
+import LOGO from '../../assets/images/logo-no-background.png';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -104,11 +105,10 @@ export default function Header() {
                         <MenuIcon />
                     </IconButton>
                     <img
-                        src="/images/logo_no_background.svg"
+                        src={LOGO}
                         alt="Movie-Lover"
                         className="logo"
                         onClick={() => navigate('/')}
-                        style={{ flexGrow: 1 }}
                     />
 
                     <Box sx={{ flexGrow: 1 }}>
