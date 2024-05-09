@@ -16,7 +16,7 @@ export default function HomeBanner() {
   const { data, loading, error } = useFetch("/movie/upcoming")
 
   useEffect(() => {
-    if (error === null) {
+    if (error === null && !loading) {
       const randomNum = Math.floor(Math.random() * 20)
       const backdropImg = data?.results[randomNum]?.backdrop_path
       const background = image_url.backdrop + backdropImg
