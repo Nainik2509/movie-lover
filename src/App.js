@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './pages/home/Home';
 import Detail from "./pages/detail/Detail";
 import Explore from "./pages/explore/Explore";
@@ -9,7 +9,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { fetchDataFromApi } from "./utils/api";
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getApiConfig, getGenres } from "./store/homeSlice";
 import './App.css';
 
