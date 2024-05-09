@@ -38,7 +38,7 @@ export default function HomeBanner() {
   return (
     <>
       <div className='home-banner'>
-        {!loading && (
+        {backgroundImg !== "" && (
           <LoadImg src={backgroundImg} className="background-image" />
         )}
         <div

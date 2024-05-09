@@ -16,12 +16,12 @@ const SearchResult = () => {
     const [totalData, setTotalData] = useState(0);
     const { query } = useParams();
 
-    const fetchInitialData = () => {
+    const fetchInitialData = (pageNum) => {
         setLoading(true);
+        setPageNum(pageNum);
         fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
             (res) => {
                 setData(res);
-                console.log(res);
                 setTotalData(res.total_results);
                 setPageNum((prev) => prev + 1);
                 setLoading(false);
@@ -46,8 +46,8 @@ const SearchResult = () => {
     };
 
     useEffect(() => {
-        setPageNum(1);
-        fetchInitialData();
+        const initialPageNum = 1;
+        fetchInitialData(initialPageNum);
     }, [query]);
 
     return (
